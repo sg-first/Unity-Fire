@@ -42,11 +42,17 @@ class unityFire : MonoBehaviour
 				item.transform.Rotate(angle,Space.Self);
 		}
 
-		public static void pushItem(GameObject item,float power,Vector3 angle) //一般angle传up right forward或者基于此的变换
+		public static void addItemForce(GameObject item,float power,Vector3 angle) //一般angle传up right forward或者基于此的变换
 		{
 				Rigidbody rb = item.GetComponent<Rigidbody> ();
 				Vector3 pos = item.transform.TransformDirection(angle);
 				rb.AddForce(pos * power);
+		}
+
+		public static void addItemVelocity(GameObject item,float v,Vector3 angle)
+		{
+			Rigidbody rb = item.GetComponent<Rigidbody> ();
+			rb.velocity = angle * v;
 		}
 
 		public static GameObject findItem(string itemName)
