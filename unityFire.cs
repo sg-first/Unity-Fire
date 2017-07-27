@@ -49,10 +49,16 @@ class unityFire : MonoBehaviour
 				rb.AddForce(pos * power);
 		}
 
-		public static void addItemVelocity(GameObject item,float v,Vector3 angle)
+		public static void setItemVelocity(GameObject item,float v,Vector3 angle)
 		{
 			Rigidbody rb = item.GetComponent<Rigidbody> ();
 			rb.velocity = angle * v;
+		}
+
+		public static void addItemVelocity(GameObject item,float v,Vector3 angle)
+		{
+			Rigidbody rb = item.GetComponent<Rigidbody> ();
+			rb.velocity += angle * v;
 		}
 
 		public static GameObject findItem(string itemName)
