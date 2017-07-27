@@ -75,4 +75,11 @@ class unityFire : MonoBehaviour
 		{
 				SceneManager.LoadScene(sceneName);
 		}
+
+		public static void setCameraDepth(string cameraName,int depth)
+		{
+			GameObject item = unityFire.findItem (cameraName);
+			Camera c = item.GetComponent<Camera> ();
+			c.depth = depth;
+		}
 }
