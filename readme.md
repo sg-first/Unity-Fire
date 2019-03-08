@@ -1,4 +1,4 @@
-UnityFire Class
+Unity-Fire
 ==========
 Unity3D Package of Life-Fire style. You can use it to easily call Unity3d features.
 
