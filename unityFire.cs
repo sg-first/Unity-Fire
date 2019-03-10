@@ -11,9 +11,9 @@ class unityFire : MonoBehaviour
         item.transform.Translate(pos);
 	}
 
-    public static void moveTimeItem(GameObject item, float time, float speed, Vector3 angle = default(Vector3))
+    public static void simpleMoveItem(GameObject item, float time, float speed, Vector3 angle = default(Vector3))
     {
-        item.GetComponent<move>().moveTime(time, speed, angle);
+        item.GetComponent<SC>().moveTime(time, speed, angle);
     }
 
 	public static GameObject addItem(string objname,Vector3 pos,Vector3 angle=default(Vector3))
