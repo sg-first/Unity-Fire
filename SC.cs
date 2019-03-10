@@ -26,7 +26,6 @@ public class SC : MonoBehaviour
         if(isMove)
         {
             nowTime += Time.deltaTime;
-            Debug.Log(nowTime);
             if (nowTime < targetTime)
             {
                 transform.Translate(angle * speed * Time.deltaTime);
