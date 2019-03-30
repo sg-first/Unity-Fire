@@ -16,7 +16,22 @@ class unityFire : MonoBehaviour
         item.GetComponent<SC>().moveTime(time, speed, angle);
     }
 
-	public static GameObject addItem(string objname,Vector3 pos,Vector3 angle=default(Vector3))
+    public static void simpleMoveTargetItem(GameObject item, float time, Vector3 target)
+    {
+        item.GetComponent<SC>().moveTimeTarget(time, target);
+    }
+
+    public static void simpleRotateItem(GameObject item,float time,Vector3 rotateSpeed)
+    {
+        item.GetComponent<SC>().rotateTime(time, rotateSpeed);
+    }
+
+    public static void simpleRotateTargetItem(GameObject item, float time, Vector3 rotateTarget)
+    {
+        item.GetComponent<SC>().rotateTimeTarget(time, rotateTarget);
+    }
+
+    public static GameObject addItem(string objname,Vector3 pos,Vector3 angle=default(Vector3))
 	{
 		GameObject itemp = Resources.Load<GameObject> (objname);
 		Quaternion qangle;
@@ -46,7 +61,7 @@ class unityFire : MonoBehaviour
 	{
 	    Quaternion q=item.transform.rotation;
         Vector3 result = calu.QuaternionToVector3(q);
-        result.Normalize();
+      
         return result; 
     }
 
@@ -107,6 +122,16 @@ class unityFire : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         return hit.point;
+    }
+
+    public static GameObject getRayItem(Vector3 pos)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+            return hit.collider.gameObject;
+        else
+            return null;
     }
 
     public static Vector3 lookAt(GameObject itemA, GameObject itemB) //B撞A，B是参数A是this
