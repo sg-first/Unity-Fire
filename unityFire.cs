@@ -140,4 +140,9 @@ class unityFire : MonoBehaviour
         result.Normalize();
         return result;
     }
+
+    public static void setItemScale(GameObject item, float x = 0, float y = 0, float z = 0)
+    {
+        item.transform.localScale += new Vector3(x, y, z);
+    }
 }
