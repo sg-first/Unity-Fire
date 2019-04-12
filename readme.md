@@ -17,3 +17,4 @@ API list
 * `void exit()` Exit program.
 * `void changeScene(string sceneName)` Change scene.
 * `void setCameraDepth(string cameraName,int depth)` Set the level at which the camera image is displayed on the screen.
+* `void setItemScale(GameObject item, float x = 0, float y = 0, float z = 0)` Zoom an object.

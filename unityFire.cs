@@ -126,7 +126,7 @@ class unityFire : MonoBehaviour
 
     public static GameObject getRayItem(Vector3 pos)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(pos);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
             return hit.collider.gameObject;
